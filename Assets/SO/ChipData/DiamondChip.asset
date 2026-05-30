@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7afd2db21d9ee85438367ac40d6bb28b, type: 3}
+  m_Name: DiamondChip
+  m_EditorClassIdentifier: 
+  <chipImage>k__BackingField: {fileID: 21300000, guid: a76e3338dcb16fa439e72f5a9227c36f, type: 3}
+  <chipID>k__BackingField: DiamondChip
+  <chipName>k__BackingField: "\uB2E4\uC774\uC544\uBAAC\uB4DC \uCE69"
+  <chipDescription>k__BackingField: "\uB0B4\uAC00 \uB2E4\uC774\uC544\uBAAC\uB4DC
+    \uCE74\uB4DC\uB97C \uBF51\uC744 \uB54C\uB9C8\uB2E4 +100 \uC810"
+  <chipRarity>k__BackingField: 0

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fc6665a7770214d8c8e49f6954778f, type: 3}
+  m_Name: SpadeChip
+  m_EditorClassIdentifier: 
+  <chipImage>k__BackingField: {fileID: 21300000, guid: 3fb894ee2369a8a4ebe689579ecb9453, type: 3}
+  <chipID>k__BackingField: SpadeChip
+  <chipName>k__BackingField: "\uC2A4\uD398\uC774\uB4DC \uCE69"
+  <chipDescription>k__BackingField: "\uB0B4\uAC00 \uC2A4\uD398\uC774\uB4DC \uCE74\uB4DC\uB97C
+    \uBF51\uC744 \uB54C\uB9C8\uB2E4 +100 \uC810"
+  <chipRarity>k__BackingField: 0
