@@ -14,6 +14,7 @@ public class StartViewController : MonoBehaviour
     private Button startBtn;
     private Button pediaBtn;
     private Button exitBtn;
+    private Button homeBtn;
 
     public float fadeDuration = 1.0f;
     public float intervalDurtaion = 1.0f;
@@ -25,10 +26,12 @@ public class StartViewController : MonoBehaviour
         startBtn = GetComponentsInChildren<Button>()[0];
         pediaBtn = GetComponentsInChildren<Button>()[1];
         exitBtn = GetComponentsInChildren<Button>()[2];
+        //homeBtn = GetComponentsInChildren<Button>()[3];
 
         startBtn.onClick.AddListener(OnStartClick);
         pediaBtn.onClick.AddListener(OnPediaClick);
         exitBtn.onClick.AddListener(OnExitClick);
+        //homeBtn.onClick.AddListener(OnHomeClick);
     }
 
     private void OnStartClick()
@@ -73,5 +76,10 @@ public class StartViewController : MonoBehaviour
     private void OnExitClick()
     {
         Application.Quit();
+    }
+
+    private void OnHomeClick()
+    {
+
     }
 }

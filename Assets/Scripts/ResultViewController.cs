@@ -15,14 +15,23 @@ public class ResultViewController : MonoBehaviour
     public SelectChipController chipSelectBtn_1;
     public SelectChipController chipSelectBtn_2;
     public TextMeshProUGUI explainText;
+    public TextMeshProUGUI networkErrorText;
     public TextMeshProUGUI highScoreMark;
 
+    public Button uploadScoreBtn;
     public Button restartBtn;
+    public Button leaderBoardBtn;
     public TextMeshProUGUI finalScoreText;
+    public TextMeshProUGUI rankingText;
+
+    public UploadController uploadController;
+    public LeaderBoardController leaderBoardController;
 
     private void Start()
     {
         restartBtn.onClick.AddListener(RestartGame);
+        uploadScoreBtn.onClick.AddListener(OnUploadClick);
+        leaderBoardBtn.onClick.AddListener(OnLeaderBoardClick);
     }
 
     public void SetResult(GameResult result, int player_number = 0, int dealer_number = 0)
@@ -122,7 +131,11 @@ public class ResultViewController : MonoBehaviour
                     }
                 })
                 .AppendInterval(1.0f)
-                .AppendCallback(() => { restartBtn.gameObject.SetActive(true);  });
+                .AppendCallback(() => { 
+                    restartBtn.gameObject.SetActive(true);
+                    uploadScoreBtn.gameObject.SetActive(true);
+                    leaderBoardBtn.gameObject.SetActive(true);
+                });
         }
     }
 
@@ -134,22 +147,72 @@ public class ResultViewController : MonoBehaviour
         scoreText.gameObject.SetActive(false);
         resultText.gameObject.SetActive(false);
         explainText.gameObject.SetActive(false);
+        networkErrorText.gameObject.SetActive(false);
 
         restartBtn.gameObject.SetActive(false);
+        uploadScoreBtn.gameObject.SetActive(false);
+        leaderBoardBtn.gameObject.SetActive(false);
         finalScoreText.gameObject.SetActive(false);
+        rankingText.gameObject.SetActive(false);
+
+        leaderBoardController.gameObject.SetActive(false);
+
+        EnableUploadBtn();
 
         this.gameObject.SetActive(false);
     }
 
     public void RestartGame()
     {
-        resultText.gameObject.SetActive(false);
+        /*resultText.gameObject.SetActive(false);
         scoreText .gameObject.SetActive(false);
         restartBtn.gameObject.SetActive(false);
+        uploadScoreBtn.gameObject.SetActive(false);
+        leaderBoardBtn.gameObject.SetActive(false);
         finalScoreText.gameObject.SetActive(false);
         highScoreMark.gameObject.SetActive(false);
-        gameObject.SetActive(false);
+        gameObject.SetActive(false);*/
+
+        SetActiveFalse();
+
         GameManager.Instance.StartGameSetting();
         GameManager.Instance.StartGame();
     }
+
+    public void OnUploadClick()
+    {
+        uploadController.gameObject.SetActive(true);
+    }
+
+    public void DisalbeUploadBtn()
+    {
+        uploadScoreBtn.interactable = false;
+    }
+
+    public void EnableUploadBtn()
+    {
+        uploadScoreBtn.interactable = true;
+    }
+
+    public void SetRankingText(int score)
+    {
+        rankingText.text = "현재순위: " + score.ToString() + "!!";
+        rankingText.gameObject.SetActive(true);
+    }
+
+    public void OnLeaderBoardClick()
+    {
+        StartCoroutine(GameManager.Instance.jetsonNano.GetRanking(leaderBoardController));
+    }
+
+    public void ShowNetworkErrorText()
+    {
+        networkErrorText.gameObject.SetActive(true);
+    }
+
+    /*private IEnumerator StartGetRanking()
+    {
+        yield return StartCoroutine(GameManager.Instance.jetsonNano.GetRanking(leaderBoardController));
+        leaderBoardController.ToggleActive();
+    }*/
 }

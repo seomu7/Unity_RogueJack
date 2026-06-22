@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
     public StartViewController startViewController;
     public ChipPediaView pediaView;
 
+    public MyJetsonNano jetsonNano;
+
     [Header("GameInfo")]
     public int round = 0;
 
@@ -176,6 +178,11 @@ public class GameManager : MonoBehaviour
             CardMaster.Instance.ReturnTopDrawCardToCardPool();
             OnRoundStart();
         });
+    }
+
+    public void MainHome()
+    {
+
     }
 
    /* private void OnGUI()

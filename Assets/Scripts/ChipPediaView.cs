@@ -55,6 +55,11 @@ public class ChipPediaView : MonoBehaviour
 
     private void OnBackClick()
     {
+        SetActiveFalse();
+    }
+
+    public void SetActiveFalse()
+    {
         gameObject.SetActive(false);
     }
 
