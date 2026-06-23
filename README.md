@@ -17,6 +17,8 @@
 
 * Unity
 * C#
-* DOTween
+* JetsonNano
+* Linux
+* FastAPI
 
 ![ex_2](https://github.com/seomu7/Unity_RogueJack/blob/main/SampleImage/ex_2.png)
